@@ -4,6 +4,7 @@ class PasswordsController < ApplicationController
 
     if user
       user.generate_password_reset_token
+      UseMailer.password_reset(user).deliver_later
       render json: { message: "Password reset instructions sent" }, status: :ok
     else
       render json: { error: "User not found!" }, status: :not_found
@@ -13,7 +14,7 @@ class PasswordsController < ApplicationController
   def update_password
     user = User.find_by(password_reset_token: params[:user][:password_reset_token])
 
-    if user && password_reset_token_valid?
+    if user && user.password_reset_token_valid?
       user.update(
         password: params[:user][:password],
         password_confirmation: params[:user][:password_confirmation],
