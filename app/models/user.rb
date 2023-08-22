@@ -15,4 +15,11 @@ class User < ApplicationRecord
   def password_reset_token_valid?
     password_reset_token_expires_at > Time.now
   end
+
+  def generate_remember_me_token
+    self.remember_me_token = SecureRandom.urlsafe.base64
+    self.remember_me_token_expires_at = Time.now + 24.hours
+
+    save(validate: false)
+  end
 end
