@@ -1,5 +1,5 @@
 class PasswordsController < ApplicationController
-  def reset_password
+  def create
     user = User.find_by(email: params[:user][:email])
 
     if user
@@ -11,7 +11,9 @@ class PasswordsController < ApplicationController
     end
   end
 
-  def update_password
+  def edit; end
+
+  def update
     user = User.find_by(password_reset_token: params[:user][:password_reset_token])
 
     if user && user.password_reset_token_valid?
