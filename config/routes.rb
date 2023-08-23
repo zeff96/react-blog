@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   post '/signup', to: "registrations#create"
   post '/login', to: "authentication#create"
-  post '/reset_password', to: "passwords#reset_password"
-  put '/update_password', to: "passwords#update_password"
+  post '/reset_password', to: "passwords#create"
+  get '/reset_password/edit', to: "passwords#edit", as: edit_password_reset
+  put '/update_password', to: "passwords#update"
 end
