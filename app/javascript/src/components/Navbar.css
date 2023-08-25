@@ -7,8 +7,10 @@
   
   .container {
     width: 90%;
+    height: inherit;
     display: flex;
-    gap: 0.5rem;
+    gap: 2rem;
+    align-items: center;
   }
   
   .nav-link-home {
