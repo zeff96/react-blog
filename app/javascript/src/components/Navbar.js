@@ -9,8 +9,8 @@ const NavbarComponet = () => {
         <div>
           <ul>
             <li>
-              <NavLink to="/">Home</NavLink>
-              <NavLink to="/signup">sign Up</NavLink>
+              <NavLink to="/" className="nav-link">Home</NavLink>
+              <NavLink to="/signup" className="nav-link">sign Up</NavLink>
               <select>
                 <option defaultValue="Login">Login</option>
                 <option value="Logout">Logout</option>
