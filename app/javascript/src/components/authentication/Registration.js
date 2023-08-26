@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useRef } from "react";
 
 const Regsitration = () => {
+  const formRef = useRef();
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    const formData = new FormData(formRef.current);
+    const form = Object.fromEntries(formData);
+
+    const data = {
+      user: { name: form.name, email: form.email, password: form.password, password_confirmation: form.password_confirmation}
+    }
+  }
   return(
-    <form>
+    <form ref={formRef}>
       <label htmlFor="name">
         Name
         <input type="text" name="name" placeholder="Enter name" autoComplete="name" autoFocus required className="form-control" />
