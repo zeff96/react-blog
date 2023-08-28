@@ -1,8 +1,10 @@
 import React from "react"
 import "./Homepage.css"
+import NavbarComponet from "./Navbar";
+
 const Homepage = () => {
   return(
-    <h2 className="text">test test</h2>
+    <NavbarComponet />
   )
 }
 

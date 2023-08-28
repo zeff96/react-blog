@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_token!
-    payload = JsonWebtoken.decode(auth_token)
+    payload = JsonWebToken.decode(auth_token)
     @current_user = User.find(payload["sub"])
   rescue JWT::ExpiredSignature
     render json: { error: "Auth token has expired" }, status: :unauthorized
