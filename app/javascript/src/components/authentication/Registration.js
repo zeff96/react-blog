@@ -30,9 +30,10 @@ const Regsitration = () => {
       console.log(error);
     }
   };
-  return (
-    <form className='form' ref={formRef} onSubmit={handleSubmit}>
-      <label htmlFor='name'>
+
+  return(
+    <form ref={formRef}>
+      <label htmlFor="name">
         Name
         <input
           type='text'

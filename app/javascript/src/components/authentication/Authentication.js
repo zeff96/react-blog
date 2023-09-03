@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useRef } from "react";
 
 const Authentication = () => {
+  const formRef = useRef();
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    const formData = new FormData(formRef.current);
+    const form = Object.fromEntries(formData);
+
+    const data = {
+      user: { email: form.email, password: form.password}
+    }
+  }
   return(
-    <form>
+    <form ref={formRef}>
       <label htmlFor="email">
         Email
         <input type="email" name="email" placeholder="Enter email" autoComplete="email" autoFocus required className="form-control" />
