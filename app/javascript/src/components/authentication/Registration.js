@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import Api from '../../apis/Api';
+import './Registration.css';
 
 const Regsitration = () => {
   const formRef = useRef();
@@ -18,7 +19,7 @@ const Regsitration = () => {
       },
     };
     try {
-      const response = await Api.post('/sign', data, {
+      const response = await Api.post('/signup', data, {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -30,7 +31,7 @@ const Regsitration = () => {
     }
   };
   return (
-    <form>
+    <form className='form' ref={formRef} onSubmit={handleSubmit}>
       <label htmlFor='name'>
         Name
         <input
