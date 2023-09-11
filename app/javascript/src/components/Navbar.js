@@ -16,7 +16,7 @@ const NavbarComponet = () => {
               <NavLink to='/registration' className='nav-link'>
                 sign Up
               </NavLink>
-              <select>
+              <select className='form-select'>
                 <option defaultValue='Login'>Login</option>
                 <option value='Logout'>Logout</option>
               </select>
