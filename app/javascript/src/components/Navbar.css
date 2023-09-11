@@ -27,6 +27,7 @@
   font-size: 1.6rem;
   transition: all, 0.2s;
   color: inherit;
+  margin-right: 2rem;
 }
 
 .nav-link:hover {
