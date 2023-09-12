@@ -16,14 +16,11 @@ const NavbarComponet = () => {
               <NavLink to='/registration' className='nav-link'>
                 sign Up
               </NavLink>
-              <select className='form-select'>
-                <option defaultValue='Login'>
-                  <NavLink className='nav-link ' to={'/login'}>
-                    Login
-                  </NavLink>
-                </option>
-                <option value='Logout'>Logout</option>
-              </select>
+            </li>
+            <li>
+              <NavLink className='nav-link ' to={'/login'}>
+                Login
+              </NavLink>
             </li>
           </ul>
         </div>
