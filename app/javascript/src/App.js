@@ -5,11 +5,10 @@ import Regsitration from './components/authentication/Registration';
 import Authentication from './components/authentication/Authentication';
 
 const App = () => {
-  const token = localStorage.getItem('token');
   return (
     <Router>
       <Routes>
-        {token && <Route exact path='/' element={<Homepage />} />}
+        <Route exact path='/' element={<Homepage />} />
         <Route exact path='/registration' element={<Regsitration />} />
         <Route exact path='/login' element={<Authentication />} />
       </Routes>
