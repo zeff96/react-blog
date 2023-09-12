@@ -8,7 +8,7 @@ const NavbarComponet = () => {
       <div className='container'>
         <NavLink className='nav-link-home'>Blog App</NavLink>
         <div>
-          <ul>
+          <ul className='nav-items'>
             <li>
               <NavLink to='/' className='nav-link'>
                 Home
