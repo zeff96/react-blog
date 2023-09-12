@@ -9,7 +9,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route exact path='/' element={<Homepage />} />
+        {token && <Route exact path='/' element={<Homepage />} />}
         <Route exact path='/registration' element={<Regsitration />} />
       </Routes>
     </Router>
