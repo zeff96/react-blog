@@ -5,6 +5,7 @@ import Regsitration from './components/authentication/Registration';
 import Authentication from './components/authentication/Authentication';
 
 const App = () => {
+  const token = localStorage.getItem('token');
   return (
     <Router>
       <Routes>
