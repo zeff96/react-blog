@@ -13,6 +13,8 @@ const NavbarComponet = () => {
               <NavLink to='/' className='nav-link'>
                 Home
               </NavLink>
+            </li>
+            <li>
               <NavLink to='/registration' className='nav-link'>
                 sign Up
               </NavLink>
