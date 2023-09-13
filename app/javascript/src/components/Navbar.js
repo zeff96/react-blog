@@ -7,6 +7,11 @@ const NavbarComponet = () => {
     <nav className='nav'>
       <div className='container'>
         <NavLink className='nav-link-home'>Blog App</NavLink>
+        <button>
+          <div className='hamburger'></div>
+          <div className='hamburger'></div>
+          <div className='hamburger'></div>
+        </button>
         <div>
           <ul className='nav-items'>
             <li>
