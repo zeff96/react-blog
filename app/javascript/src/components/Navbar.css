@@ -39,5 +39,10 @@
   color: blue;
 }
 
+.navbar-toggler {
+  border: 2px solid white;
+  background-color: white;
+}
+
 @media (min-width: 576px) {
 }
