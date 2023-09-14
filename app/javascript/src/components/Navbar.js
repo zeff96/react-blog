@@ -5,7 +5,7 @@ import './Navbar.css';
 const NavbarComponet = () => {
   return (
     <nav className='nav'>
-      <NavLink className='nav-link-home'>Blog App</NavLink>
+      <NavLink className='nav-link-home'>Blog</NavLink>
       <button className='navbar-toggler'>
         <span className='hamburger'></span>
         <span className='hamburger'></span>
