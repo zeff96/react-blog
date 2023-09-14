@@ -7,9 +7,9 @@ const NavbarComponet = () => {
     <nav className='nav'>
       <NavLink className='nav-link-home'>Blog App</NavLink>
       <button className='navbar-toggler'>
-        <div className='hamburger'></div>
-        <div className='hamburger'></div>
-        <div className='hamburger'></div>
+        <span className='hamburger'></span>
+        <span className='hamburger'></span>
+        <span className='hamburger'></span>
       </button>
       <div>
         <ul className='nav-items'>
