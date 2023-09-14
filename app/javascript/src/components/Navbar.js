@@ -14,7 +14,7 @@ const NavbarComponet = () => {
       <div>
         <ul className='nav-items'>
           <li>
-            <NavLink to='/' className='nav-link'>
+            <NavLink to='/' className='nav-link active'>
               Home
             </NavLink>
           </li>
