@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
 const NavbarComponet = () => {
+  const [isNavItemsVisible, setIsNavItemsVisible] = useState(false);
+
+  const toggleNavItems = () => {
+    setIsNavItemsVisible(!isNavItemsVisible);
+  };
+
   return (
     <nav className='nav'>
       <NavLink className='nav-link-home'>Blog</NavLink>
-      <button className='navbar-toggler'>
+      <button className='navbar-toggler' onClick={toggleNavItems}>
         <span className='hamburger'></span>
         <span className='hamburger'></span>
         <span className='hamburger'></span>
       </button>
       <div>
-        <ul className='nav-items'>
+        <ul className={`nav-items ${isNavItemsVisible ? 'show' : ''}`}>
           <li>
             <NavLink to='/' className='nav-link active'>
               Home
