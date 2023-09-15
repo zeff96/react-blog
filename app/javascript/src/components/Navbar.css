@@ -43,7 +43,7 @@
 
 .navbar-toggler {
   background-color: #333;
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 0.5rem;
   cursor: pointer;
@@ -67,5 +67,8 @@
   background-color: #fff;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
+  .navbar-toggler {
+    display: flex;
+  }
 }
