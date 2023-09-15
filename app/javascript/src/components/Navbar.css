@@ -71,4 +71,14 @@
   .navbar-toggler {
     display: flex;
   }
+
+  .nav-items {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .show {
+    display: flex;
+  }
 }
