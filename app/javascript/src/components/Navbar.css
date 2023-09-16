@@ -68,13 +68,17 @@
 }
 
 @media (max-width: 576px) {
-  .navbar-toggler {
-    display: flex;
-  }
-
   .nav {
     flex-direction: column;
-    align-items: flex-start;
+    height: auto;
+  }
+
+  .nav-link-home {
+    align-self: flex-start;
+  }
+
+  .navbar-toggler {
+    display: flex;
   }
 
   .nav-items {
