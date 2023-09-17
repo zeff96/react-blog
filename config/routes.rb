@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "root#index"
+  get '*path', to: 'root#index', constraints: ->(request) { !request.xhr? && request.format.html? }
 
   post '/signup', to: "registrations#create"
   post '/login', to: "authentication#create"
