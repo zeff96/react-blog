@@ -11,7 +11,9 @@ const NavbarComponet = () => {
 
   return (
     <nav className='nav'>
-      <NavLink className='nav-link-home'>Blog</NavLink>
+      <div>
+        <NavLink className='nav-link-home'>Blog</NavLink>
+      </div>
       <button className='navbar-toggler' onClick={toggleNavItems}>
         <span className='hamburger'></span>
         <span className='hamburger'></span>
