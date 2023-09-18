@@ -48,11 +48,12 @@
   gap: 0.5rem;
   cursor: pointer;
   border: 2px solid grey;
+  border-radius: 0.5rem;
   padding: 1rem;
   outline: none;
   position: absolute;
   right: 2rem;
-  top: 2rem;
+  top: 0.5rem;
 }
 
 .hamburger {
