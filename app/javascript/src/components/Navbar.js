@@ -11,7 +11,7 @@ const NavbarComponet = () => {
 
   return (
     <nav className='nav'>
-      <div>
+      <div className='nav-icon'>
         <NavLink className='nav-link-home'>Blog</NavLink>
       </div>
       <button className='navbar-toggler' onClick={toggleNavItems}>

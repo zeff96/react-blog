@@ -33,7 +33,7 @@ const Regsitration = () => {
 
   return (
     <form ref={formRef} className='form' onSubmit={handleSubmit}>
-      <label htmlFor='name'>
+      <label htmlFor='name' className='form-label'>
         Name
         <input
           type='text'
@@ -45,7 +45,7 @@ const Regsitration = () => {
           className='form-control'
         />
       </label>
-      <label htmlFor='email'>
+      <label htmlFor='email' className='form-label'>
         Email
         <input
           type='email'
@@ -57,7 +57,7 @@ const Regsitration = () => {
           className='form-control'
         />
       </label>
-      <label htmlFor='password'>
+      <label htmlFor='password' className='form-label'>
         Password
         <input
           type='password'
@@ -68,7 +68,7 @@ const Regsitration = () => {
           className='form-control'
         />
       </label>
-      <label htmlFor='password_confirmation'>
+      <label htmlFor='password_confirmation' className='form-label'>
         Password Confirmation
         <input
           type='password'
