@@ -16,6 +16,11 @@
   padding: 1rem;
   border: 1px solid gray;
   border-radius: 0.5rem;
+  outline: none;
+}
+
+.form-control:focus {
+  border: 2px solid gray;
 }
 
 .btn {
