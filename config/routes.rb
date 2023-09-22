@@ -7,4 +7,12 @@ Rails.application.routes.draw do
   post '/reset_password', to: "passwords#create"
   get '/reset_password/edit', to: "passwords#edit"
   put '/update_password', to: "passwords#update"
+
+  namespace do
+    api do
+      v1 do
+        resources :posts
+      end
+    end
+  end
 end
