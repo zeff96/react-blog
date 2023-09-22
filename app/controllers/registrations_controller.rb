@@ -6,7 +6,7 @@ class RegistrationsController < ApplicationController
       render json: { error: 'Email already taken!' }, status: :unprocessable_entity
     else
       user = User.new(sign_up_params)
-      if user
+      if user.save
         render json: { message: 'User created successfully!', token: JsonWebToken.encode({ sub: user.id }) }, status: :created
       else
         render json: { error: 'Failed to create user' }, status: :unprocessable_entity
