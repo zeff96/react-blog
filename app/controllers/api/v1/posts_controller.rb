@@ -1,4 +1,4 @@
-class API::v1::PostsController < ApplicationController
+class Api::v1::PostsController < ApplicationController
   def index
   end
 
