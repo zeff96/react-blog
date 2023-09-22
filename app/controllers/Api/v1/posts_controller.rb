@@ -26,4 +26,10 @@ class Api::v1::PostsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :content)
+  end
 end
