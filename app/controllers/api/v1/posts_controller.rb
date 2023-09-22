@@ -4,6 +4,7 @@ class Api::v1::PostsController < ApplicationController
 
   def new
     @post = current_user.posts.build
+    render json: @post
   end
 
   def create
