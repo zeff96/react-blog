@@ -1,13 +1,11 @@
 .form {
-  width: 100%;
-  font-size: 1.6rem;
+  padding: 2rem;
 }
 
 .form-label {
-  width: 90%;
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 3rem;
+  width: 100%;
+  display: inline-block;
+  margin: 0.8rem 0;
 }
 
 .form-control {
