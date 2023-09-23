@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-
+import './Authentication.css';
 const Authentication = () => {
   const formRef = useRef();
 
@@ -14,7 +14,7 @@ const Authentication = () => {
     };
   };
   return (
-    <form ref={formRef}>
+    <form ref={formRef} className='form'>
       <label htmlFor='email' className='form-label'>
         Email
         <input
