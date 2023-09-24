@@ -16,7 +16,7 @@ class Api::V1::PostsController < ApplicationController
     if @post.save
       render json: @post
     else
-      render json: {error: "Failed to create post!"}
+      render json: {error: @post.errors.full_message}, status: :unprocessable_entity
     end
   end
 
