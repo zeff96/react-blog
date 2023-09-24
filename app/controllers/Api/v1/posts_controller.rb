@@ -14,7 +14,7 @@ class Api::V1::PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      render json: @post
+      render json: {post: @post, message: "Post created successfully"}, status: :created
     else
       render json: {error: @post.errors.full_message}, status: :unprocessable_entity
     end
