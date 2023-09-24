@@ -33,6 +33,8 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def destroy
+    @post.destroy
+    render json: {message: "Post deleted successfully!"}
   end
 
   private
