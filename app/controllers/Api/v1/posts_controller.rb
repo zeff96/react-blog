@@ -1,6 +1,6 @@
 class Api::V1::PostsController < ApplicationController
   before_action :set_post, only: %i[edit, update, destroy]
-  
+
   def index
     @posts = Post.all
     render json: @posts
@@ -24,6 +24,12 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def update
+    @post = current_user.posts.update(post_params)
+    if @post.save
+      render json: {post: @post, message: "Post update successfully!"}
+    else
+      render json: {error: @post.errors.full_message}, status: :unprocessable_entity
+    end
   end
 
   def destroy
