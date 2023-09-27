@@ -14,7 +14,7 @@ const Authentication = () => {
     };
   };
   return (
-    <form ref={formRef} className='form'>
+    <form ref={formRef} className='form' onSubmit={handleSubmit}>
       <label htmlFor='email' className='form-label'>
         Email
         <input
