@@ -3,7 +3,7 @@ import './Authentication.css';
 const Authentication = () => {
   const formRef = useRef();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const formData = new FormData(formRef.current);
@@ -12,6 +12,18 @@ const Authentication = () => {
     const data = {
       user: { email: form.email, password: form.password },
     };
+
+    try {
+      const response = await Api.post('/login', data, {
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <form ref={formRef} className='form' onSubmit={handleSubmit}>
