@@ -19,7 +19,7 @@ const NavbarComponet = () => {
         <span className='hamburger'></span>
         <span className='hamburger'></span>
       </button>
-      <div>
+      <div className='navbar-collapse'>
         <ul className={`nav-items ${isNavItemsVisible ? 'show' : ''}`}>
           <li>
             <NavLink to='/' className='nav-link active'>
