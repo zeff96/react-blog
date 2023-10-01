@@ -8,10 +8,10 @@ const Authentication = () => {
   const onEmailChanged = (e) => setEmail(e.target.value);
   const onPasswordChanged = (e) => setPassword(e.target.value);
 
+  const canSave = [email, password].every(Boolean);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const canSave = [email, password].every(Boolean);
 
     try {
       const response = await Api.post('/login', data, {
