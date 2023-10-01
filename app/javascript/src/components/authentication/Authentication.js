@@ -1,17 +1,12 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import './Authentication.css';
+
 const Authentication = () => {
-  const formRef = useRef();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const formData = new FormData(formRef.current);
-    const form = Object.fromEntries(formData);
-
-    const data = {
-      user: { email: form.email, password: form.password },
-    };
 
     try {
       const response = await Api.post('/login', data, {
@@ -26,7 +21,7 @@ const Authentication = () => {
     }
   };
   return (
-    <form ref={formRef} className='form' onSubmit={handleSubmit}>
+    <form className='form' onSubmit={handleSubmit}>
       <label htmlFor='email' className='form-label'>
         Email
         <input
@@ -50,7 +45,7 @@ const Authentication = () => {
           className='form-control'
         />
       </label>
-      <input type='submit' value='Log in' className='btn' />
+      <input type='submit' value='Log in' disabled={!canSave} className='btn' />
     </form>
   );
 };
