@@ -5,6 +5,8 @@ const Authentication = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const onEmailChanged = (e) => setEmail(e.target.value);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
