@@ -11,6 +11,8 @@ const Authentication = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const canSave = [email, password].every(Boolean);
+
     try {
       const response = await Api.post('/login', data, {
         headers: {
