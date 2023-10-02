@@ -78,9 +78,11 @@ const Regsitration = () => {
         <input
           type='password'
           name='password_confirmation'
+          value={passwordConfirmation}
           placeholder='Confirm password'
           autoFocus
           required
+          onChange={onPasswordConfirmationChanged}
           className='form-control'
         />
       </label>
