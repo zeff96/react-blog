@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Api from '../../apis/Api';
 import './Registration.css';
 
@@ -7,21 +7,10 @@ const Regsitration = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
-  const formRef = useRef();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData(formRef.current);
-    const form = Object.fromEntries(formData);
-    const data = {
-      user: {
-        name: form.name,
-        email: form.email,
-        password: form.password,
-        password_confirmation: form.password_confirmation,
-      },
-    };
     try {
       const response = await Api.post('/signup', data, {
         headers: {
@@ -36,7 +25,7 @@ const Regsitration = () => {
   };
 
   return (
-    <form ref={formRef} className='form' onSubmit={handleSubmit}>
+    <form className='form' onSubmit={handleSubmit}>
       <label htmlFor='name' className='form-label'>
         Name
         <input
