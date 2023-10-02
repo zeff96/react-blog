@@ -8,6 +8,8 @@ const Regsitration = () => {
   const [password, setPassword] = useState();
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
 
+  const onNameChanged = (e) => setName(e.target.value);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
