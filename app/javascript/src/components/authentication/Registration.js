@@ -4,6 +4,7 @@ import './Registration.css';
 
 const Regsitration = () => {
   const [name, setName] = useState('');
+  const [email, setEmail] = useState();
   const formRef = useRef();
 
   const handleSubmit = async (e) => {
