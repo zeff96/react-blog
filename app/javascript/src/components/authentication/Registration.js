@@ -51,10 +51,12 @@ const Regsitration = () => {
         <input
           type='email'
           name='email'
+          value={email}
           placeholder='Enter email'
           autoComplete='email'
           autoFocus
           required
+          onChange={onEmailChanged}
           className='form-control'
         />
       </label>
