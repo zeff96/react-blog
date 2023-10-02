@@ -11,6 +11,8 @@ const Regsitration = () => {
   const onNameChanged = (e) => setName(e.target.value);
   const onEmailChanged = (e) => setEmail(e.target.value);
   const onPasswordChanged = (e) => setPassword(e.target.value);
+  const onPasswordConfirmationChanged = (e) =>
+    setPasswordConfirmation(e.target.value);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
