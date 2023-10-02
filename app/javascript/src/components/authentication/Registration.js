@@ -88,7 +88,12 @@ const Regsitration = () => {
           className='form-control'
         />
       </label>
-      <input type='submit' value='Sign up' className='btn' />
+      <input
+        type='submit'
+        value='Sign up'
+        disabled={!canSave}
+        className='btn'
+      />
     </form>
   );
 };
