@@ -14,6 +14,8 @@ const Regsitration = () => {
   const onPasswordConfirmationChanged = (e) =>
     setPasswordConfirmation(e.target.value);
 
+  const canSave = [name, email, password, passwordConfirmation].every(Boolean);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
