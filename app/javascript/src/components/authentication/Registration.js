@@ -37,10 +37,12 @@ const Regsitration = () => {
         <input
           type='text'
           name='name'
+          value={name}
           placeholder='Enter name'
           autoComplete='name'
           autoFocus
           required
+          onChange={onNameChanged}
           className='form-control'
         />
       </label>
