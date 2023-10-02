@@ -6,6 +6,7 @@ const Regsitration = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [passwordConfirmation, setPasswordConfirmation] = useState('');
   const formRef = useRef();
 
   const handleSubmit = async (e) => {
