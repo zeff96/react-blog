@@ -1,8 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Api from '../../apis/Api';
 import './Registration.css';
 
 const Regsitration = () => {
+  const [name, setName] = useState('');
   const formRef = useRef();
 
   const handleSubmit = async (e) => {
