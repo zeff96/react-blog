@@ -65,9 +65,11 @@ const Regsitration = () => {
         <input
           type='password'
           name='password'
+          value={password}
           placeholder='Enter password'
           autoFocus
           required
+          onChange={onPasswordChanged}
           className='form-control'
         />
       </label>
