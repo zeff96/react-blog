@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
-import setupStore from './redux/store';
+import store from './redux/store';
 import './index.css';
 import App from './App';
+import { apiSlice } from './redux/api/apiSlice';
 
-const store = setupStore();
+store.dispatch(apiSlice.endpoints.getUsers.initiate());
 
 const root = ReactDom.createRoot(document.getElementById('root'));
 
