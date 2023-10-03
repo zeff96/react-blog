@@ -1,4 +1,4 @@
-class PasswordsController < ApplicationController
+class Api::V1::PasswordsController < ApplicationController
   skip_before_action :authenticate_token!
   
   def create
