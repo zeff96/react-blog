@@ -27,6 +27,11 @@ const Regsitration = () => {
     setPasswordConfirmation('');
   };
 
+  if (passwordConfirmation !== password) {
+    console.log('Password do not match');
+    return;
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
