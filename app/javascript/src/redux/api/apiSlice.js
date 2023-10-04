@@ -8,5 +8,12 @@ export const apiSlice = createApi({
     getUsers: builder.query({
       query: () => '/users',
     }),
+    createUser: builder.mutation({
+      query: (formData) => ({
+        url: '/api/v1/signup',
+        method: 'POST',
+        body: formData,
+      }),
+    }),
   }),
 });
