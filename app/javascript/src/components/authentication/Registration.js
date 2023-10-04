@@ -20,6 +20,13 @@ const Regsitration = () => {
   const canSave =
     [name, email, password, passwordConfirmation].every(Boolean) && !isLoading;
 
+  const clearInputs = () => {
+    setName('');
+    setEmail('');
+    setPassword('');
+    setPasswordConfirmation('');
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -31,6 +38,7 @@ const Regsitration = () => {
           password,
           password_confirmation: passwordConfirmation,
         }).unwrap();
+        clearInputs();
       } catch (error) {
         console.log('Failed to save user: ', error);
       }
