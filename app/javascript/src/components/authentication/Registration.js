@@ -23,16 +23,17 @@ const Regsitration = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await Api.post('/signup', data, {
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-      });
-      console.log(response.data);
-    } catch (error) {
-      console.log(error);
+    if (canSave) {
+      try {
+        await createUser({
+          name,
+          email,
+          password,
+          password_confirmation: passwordConfirmation,
+        }).unwrap();
+      } catch (error) {
+        console.log('Failed to save user: ', error);
+      }
     }
   };
 
