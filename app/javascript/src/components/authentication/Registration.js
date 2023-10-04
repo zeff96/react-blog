@@ -27,21 +27,23 @@ const Regsitration = () => {
     setPasswordConfirmation('');
   };
 
-  if (passwordConfirmation !== password) {
-    console.log('Password do not match');
-    return;
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (canSave) {
       try {
+        if (passwordConfirmation !== password) {
+          console.log('Password do not match');
+          return;
+        }
+
         await createUser({
-          name,
-          email,
-          password,
-          password_confirmation: passwordConfirmation,
+          user: {
+            name,
+            email,
+            password,
+            password_confirmation: passwordConfirmation,
+          },
         }).unwrap();
         clearInputs();
       } catch (error) {
