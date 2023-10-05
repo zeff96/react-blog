@@ -18,10 +18,19 @@ class Api::V1::CommentsController < ApplicationRecord
     end
   end
 
+  def destroy
+    @comment.destroy
+    render head: no_content
+  end
+
   private
   
   def comments_param
     params.require(:comment).permit(:body)
+  end
+
+  def set_comment
+    @comment = Comment.find(params[:id])
   end
 
   def set_post
