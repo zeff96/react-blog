@@ -1,4 +1,5 @@
 class Api::V1::CommentsController < ApplicationRecord
+  before_action :set_post, only: %i[new create]
   def 
     @comment = @post.comments.build
     @comment.user = current_user
