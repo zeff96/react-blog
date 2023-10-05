@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :password, presence: true
 
   has_many :posts
+  has_many :comments through :posts
 
   def generate_password_reset_token
     self.password_reset_token = SecureRandom.urlsafe.base64
