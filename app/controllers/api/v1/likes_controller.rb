@@ -1,4 +1,5 @@
 class Api::V1::LikesController < ApplicationController
+  before_action :set_post, only: [:new, :create]
   def new
     @like = @post.likes.build
     @like.user = current_user
@@ -15,5 +16,11 @@ class Api::V1::LikesController < ApplicationController
     else
       render json: {error: @like.errors.full_messages}, status: :unprocessable_entity
     end
+  end
+
+  private
+
+  def set_post
+    @post = Post.find(params[:post_id])
   end
 end
