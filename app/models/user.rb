@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :comments through :posts
+  has_many :likes through :posts
 
   def generate_password_reset_token
     self.password_reset_token = SecureRandom.urlsafe.base64
