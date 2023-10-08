@@ -30,3 +30,8 @@
   padding: 1.2rem 2rem;
   cursor: pointer;
 }
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
