@@ -15,6 +15,7 @@ const AddPostForm = () => {
           placeholder='Post body'
         ></textarea>
       </label>
+      <input type='submit' value='Create Post' />
     </form>
   );
 };
