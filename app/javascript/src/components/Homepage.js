@@ -1,8 +1,13 @@
 import React from 'react';
 import './Homepage.css';
+import AddPostForm from './AddPostForm';
 
 const Homepage = () => {
-  return <h1>Homepage</h1>;
+  return (
+    <>
+      <AddPostForm />
+    </>
+  );
 };
 
 export default Homepage;
