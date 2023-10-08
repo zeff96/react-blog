@@ -7,6 +7,14 @@ const AddPostForm = () => {
         Title
         <input type='text' name='title' id='title' placeholder='Post title' />
       </label>
+      <label htmlFor='content'>
+        Content
+        <textarea
+          name='content'
+          id='content'
+          placeholder='Post body'
+        ></textarea>
+      </label>
     </form>
   );
 };
