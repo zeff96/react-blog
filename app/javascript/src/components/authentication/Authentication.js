@@ -16,15 +16,9 @@ const Authentication = () => {
     e.preventDefault();
 
     try {
-      const response = await Api.post('/login', data, {
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-      });
-      console.log(response.data);
+      await login({ user: { email, password } }).unwrap();
     } catch (error) {
-      console.log(error);
+      console.log('Failed to login user: ', error);
     }
   };
   return (
