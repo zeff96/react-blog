@@ -15,7 +15,7 @@ const Regsitration = () => {
   const onPasswordConfirmationChanged = (e) =>
     setPasswordConfirmation(e.target.value);
 
-  const [createUser, { isLoading }] = useCreateUserMutation();
+  const [signup, { isLoading }] = useCreateUserMutation();
 
   const canSave =
     [name, email, password, passwordConfirmation].every(Boolean) && !isLoading;
@@ -37,7 +37,7 @@ const Regsitration = () => {
           return;
         }
 
-        await createUser({
+        await signup({
           user: {
             name,
             email,

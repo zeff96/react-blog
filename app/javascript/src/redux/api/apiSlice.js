@@ -8,7 +8,7 @@ export const apiSlice = createApi({
     getUsers: builder.query({
       query: () => '/users',
     }),
-    createUser: builder.mutation({
+    signup: builder.mutation({
       query: (formData) => ({
         url: '/signup',
         method: 'POST',
