@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Api from '../../apis/Api';
 import './Registration.css';
-import { useCreateUserMutation } from '../../redux/api/apiSlice';
+import { useSignupMutation } from '../../redux/api/apiSlice';
 
 const Regsitration = () => {
   const [name, setName] = useState('');
@@ -15,7 +15,7 @@ const Regsitration = () => {
   const onPasswordConfirmationChanged = (e) =>
     setPasswordConfirmation(e.target.value);
 
-  const [signup, { isLoading }] = useCreateUserMutation();
+  const [signup, { isLoading }] = useSignupMutation();
 
   const canSave =
     [name, email, password, passwordConfirmation].every(Boolean) && !isLoading;

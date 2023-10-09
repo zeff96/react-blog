@@ -25,4 +25,4 @@ export const apiSlice = createApi({
   }),
 });
 
-export const { useCreateUserMutation } = apiSlice;
+export const { useSignupMutation, useLoginMutation } = apiSlice;
