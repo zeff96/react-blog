@@ -15,6 +15,13 @@ export const apiSlice = createApi({
         body: formData,
       }),
     }),
+    login: builder.mutation({
+      query: (body) => ({
+        url: '/login',
+        method: 'POST',
+        body,
+      }),
+    }),
   }),
 });
 
