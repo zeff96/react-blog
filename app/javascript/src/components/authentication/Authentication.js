@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import './Authentication.css';
+import { useLoginMutation } from '../../redux/api/apiSlice';
 
 const Authentication = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [login, { isLoading }] = useLoginMutation();
 
   const onEmailChanged = (e) => setEmail(e.target.value);
   const onPasswordChanged = (e) => setPassword(e.target.value);
 
-  const canSave = [email, password].every(Boolean);
+  const canSave = [email, password].every(Boolean) && !isLoading;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
