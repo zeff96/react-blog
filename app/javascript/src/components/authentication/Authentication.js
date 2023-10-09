@@ -12,11 +12,17 @@ const Authentication = () => {
 
   const canSave = [email, password].every(Boolean) && !isLoading;
 
+  const clearInputs = () => {
+    setEmail('');
+    setPassword('');
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       await login({ user: { email, password } }).unwrap();
+      clearInputs();
     } catch (error) {
       console.log('Failed to login user: ', error);
     }
