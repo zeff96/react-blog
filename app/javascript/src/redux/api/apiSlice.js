@@ -1,26 +1,31 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
+const getAuthToken = (token) => {
+  localStorage.setItem("authToken", token);
+};
 
 export const apiSlice = createApi({
-  reducerPath: 'api',
-  baseQuery: fetchBaseQuery({ baseUrl: '/api/v1' }),
-  tagTypes: ['users'],
+  reducerPath: "api",
+  baseQuery: fetchBaseQuery({ baseUrl: "/api/v1" }),
+  tagTypes: ["users"],
   endpoints: (builder) => ({
     getUsers: builder.query({
-      query: () => '/users',
+      query: () => "/users",
     }),
     signup: builder.mutation({
       query: (formData) => ({
-        url: '/signup',
-        method: 'POST',
+        url: "/signup",
+        method: "POST",
         body: formData,
       }),
     }),
     login: builder.mutation({
       query: (body) => ({
-        url: '/login',
-        method: 'POST',
+        url: "/login",
+        method: "POST",
         body,
       }),
+      onsu,
     }),
   }),
 });
