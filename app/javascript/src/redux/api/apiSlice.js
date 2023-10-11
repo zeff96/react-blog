@@ -15,29 +15,8 @@ const baseQuery = fetchBaseQuery({
 });
 
 export const apiSlice = createApi({
-  reducerPath: 'api',
-  baseQuery: fetchBaseQuery({}),
-  tagTypes: ['users'],
-  endpoints: (builder) => ({
-    getUsers: builder.query({
-      query: () => '/users',
-    }),
-    signup: builder.mutation({
-      query: (formData) => ({
-        url: '/signup',
-        method: 'POST',
-        body: formData,
-      }),
-    }),
-    login: builder.mutation({
-      query: (body) => ({
-        url: '/login',
-        method: 'POST',
-        body,
-      }),
-      onsu,
-    }),
-  }),
+  baseQuery: baseQuery,
+  endpoints: () => ({}),
 });
 
 export const { useSignupMutation, useLoginMutation } = apiSlice;
