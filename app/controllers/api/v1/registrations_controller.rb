@@ -7,9 +7,13 @@ class Api::V1::RegistrationsController < ApplicationController
     else
       user = User.new(sign_up_params)
       if user.save
-        render json: { message: 'User created successfully!', token: JsonWebToken.encode({ sub: user.id }) }, status: :created
+        render json: { 
+          message: 'User created successfully!',
+        }, status: :created
       else
-        render json: { error: 'Failed to create user' }, status: :unprocessable_entity
+        render json: { 
+          error: 'Failed to create user' 
+        }, status: :unprocessable_entity
       end
     end
   end
