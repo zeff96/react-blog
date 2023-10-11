@@ -18,5 +18,3 @@ export const apiSlice = createApi({
   baseQuery: baseQuery,
   endpoints: () => ({}),
 });
-
-export const { useSignupMutation, useLoginMutation } = apiSlice;

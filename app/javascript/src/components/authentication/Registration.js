@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import Api from '../../apis/Api';
 import './Registration.css';
-import { useSignupMutation } from '../../redux/api/apiSlice';
+import { useSignupMutation } from '../../redux/api/user/userSlice';
 
 const Regsitration = () => {
   const [name, setName] = useState('');

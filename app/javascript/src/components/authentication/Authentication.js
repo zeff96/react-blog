@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Authentication.css';
-import { useLoginMutation } from '../../redux/api/apiSlice';
+import { useLoginMutation } from '../../redux/api/user/userSlice';
 
 const Authentication = () => {
   const [email, setEmail] = useState('');
