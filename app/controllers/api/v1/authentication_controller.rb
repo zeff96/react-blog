@@ -10,7 +10,7 @@ class Api::V1::AuthenticationController < ApplicationController
       end
       render json: { 
         message: 'Logged in successfully!', 
-        user: user, 
+        user: UserSerializer.new(user), 
         token: JsonWebToken.encode({ sub: user.id }) 
       }, status: :ok
     else
