@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import './Authentication.css';
 import { useLoginMutation } from '../../redux/api/user/userSlice';
+import { setCredentials } from '../../redux/features/authSlice';
+import { useAppDispatch } from '../../redux/features/hook';
 
 const Authentication = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [login, { isLoading }] = useLoginMutation();
+
+  const dispatch = useAppDispatch();
 
   const onEmailChanged = (e) => setEmail(e.target.value);
   const onPasswordChanged = (e) => setPassword(e.target.value);
@@ -21,7 +25,8 @@ const Authentication = () => {
     e.preventDefault();
 
     try {
-      await login({ user: { email, password } }).unwrap();
+      const response = await login({ user: { email, password } }).unwrap();
+      dispatch(setCredentials({ user: response.user, token: response.token }));
       clearInputs();
     } catch (error) {
       console.log('Failed to login user: ', error);
