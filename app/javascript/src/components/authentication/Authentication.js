@@ -64,6 +64,7 @@ const Authentication = () => {
         />
       </label>
       <input type='submit' value='Log in' disabled={!canSave} className='btn' />
+      <span className='error-state'>{error}</span>
     </form>
   );
 };
