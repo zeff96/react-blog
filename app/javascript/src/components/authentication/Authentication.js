@@ -7,6 +7,8 @@ import { useAppDispatch } from '../../redux/features/hook';
 const Authentication = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
+  console.log(error);
   const [login, { isLoading }] = useLoginMutation();
 
   const dispatch = useAppDispatch();
@@ -28,8 +30,8 @@ const Authentication = () => {
       const response = await login({ user: { email, password } }).unwrap();
       dispatch(setCredentials({ user: response.user, token: response.token }));
       clearInputs();
-    } catch (error) {
-      console.log('Failed to login user: ', error);
+    } catch (err) {
+      setError(err?.data?.error);
     }
   };
   return (
