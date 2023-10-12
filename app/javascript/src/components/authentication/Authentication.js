@@ -8,7 +8,6 @@ const Authentication = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
-  console.log(error);
   const [login, { isLoading }] = useLoginMutation();
 
   const dispatch = useAppDispatch();
@@ -36,6 +35,7 @@ const Authentication = () => {
   };
   return (
     <form className='form' onSubmit={handleSubmit}>
+      {error && <span className='error-state'>{error}</span>}
       <label htmlFor='email' className='form-label'>
         Email
         <input
@@ -64,7 +64,6 @@ const Authentication = () => {
         />
       </label>
       <input type='submit' value='Log in' disabled={!canSave} className='btn' />
-      <span className='error-state'>{error}</span>
     </form>
   );
 };

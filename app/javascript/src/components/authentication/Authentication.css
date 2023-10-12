@@ -43,5 +43,11 @@
 }
 
 .error-state {
-  color: #dc3545;
+  display: block;
+  margin-bottom: 1rem;
+  background-color: #dc3545;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  border-radius: 0.4rem;
 }
