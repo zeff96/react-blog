@@ -8,6 +8,7 @@ const Regsitration = () => {
   const [password, setPassword] = useState();
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
   const [mismatch, setMismatch] = useState(null);
+  const [error, setError] = useState(null);
 
   const onNameChanged = (e) => setName(e.target.value);
   const onEmailChanged = (e) => setEmail(e.target.value);
@@ -47,7 +48,7 @@ const Regsitration = () => {
         }).unwrap();
         clearInputs();
       } catch (error) {
-        console.log('Failed to save user: ', error);
+        setError(error?.data?.error);
       }
     }
   };
@@ -81,6 +82,7 @@ const Regsitration = () => {
           onChange={onEmailChanged}
           className='form-control'
         />
+        {error && <span>{error}</span>}
       </label>
       <label htmlFor='password' className='form-label'>
         Password
