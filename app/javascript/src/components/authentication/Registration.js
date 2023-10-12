@@ -107,7 +107,7 @@ const Regsitration = () => {
           onChange={onPasswordConfirmationChanged}
           className='form-control'
         />
-        {mismatch && <span>{mismatch}</span>}
+        {mismatch && <span className='mismatch-state'>{mismatch}</span>}
       </label>
       <input
         type='submit'
