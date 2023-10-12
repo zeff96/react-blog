@@ -82,7 +82,7 @@ const Regsitration = () => {
           onChange={onEmailChanged}
           className='form-control'
         />
-        {error && <span>{error}</span>}
+        {error && <span className='email-error-state'>{error}</span>}
       </label>
       <label htmlFor='password' className='form-label'>
         Password
