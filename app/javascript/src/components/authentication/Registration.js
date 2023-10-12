@@ -7,6 +7,7 @@ const Regsitration = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
+  const [mismatch, setMismatch] = useState(null);
 
   const onNameChanged = (e) => setName(e.target.value);
   const onEmailChanged = (e) => setEmail(e.target.value);
@@ -32,7 +33,7 @@ const Regsitration = () => {
     if (canSave) {
       try {
         if (passwordConfirmation !== password) {
-          console.log('Password do not match');
+          setMismatch('Password do not match');
           return;
         }
 
@@ -106,6 +107,7 @@ const Regsitration = () => {
           onChange={onPasswordConfirmationChanged}
           className='form-control'
         />
+        {mismatch && <span>{mismatch}</span>}
       </label>
       <input
         type='submit'
