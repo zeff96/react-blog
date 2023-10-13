@@ -12,5 +12,13 @@ const postSlice = apiSlice.injectEndpoints({
             ]
           : [{ type: 'Posts', id: 'LIST' }],
     }),
+    addPost: build.mutation({
+      query: (body) => ({
+        url: 'posts',
+        method: 'POST',
+        body,
+      }),
+      invalidatesTags: [{ type: 'Posts', id: 'LIST' }],
+    }),
   }),
 });
