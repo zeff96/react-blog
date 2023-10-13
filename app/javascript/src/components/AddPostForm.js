@@ -16,8 +16,34 @@ const AddPostForm = () => {
       [name]: value,
     });
   };
+
+  const postData = {
+    post: {
+      title: formValue.title,
+      content: formValue.content,
+    },
+  };
+
+  const clearInputs = () => {
+    setFormValue({
+      ...formValue,
+      title: '',
+      content: '',
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await addPost(postData).unwrap();
+      clearInputs();
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
-    <form action='' className='form'>
+    <form className='form' onSubmit={handleSubmit}>
       <label htmlFor='title' className='form-label'>
         Title
         <input
