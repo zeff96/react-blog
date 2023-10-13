@@ -1,7 +1,12 @@
 import React from 'react';
 import './AddPostForm.css';
+import { useAddPostMutation } from '../redux/api/posts/postSlice';
 
 const AddPostForm = () => {
+  const [addPost, { isLoading }] = useAddPostMutation();
+
+  const canSave = [title, content].every(Boolean) && !isLoading;
+
   return (
     <form action='' className='form'>
       <label htmlFor='title' className='form-label'>
@@ -23,7 +28,12 @@ const AddPostForm = () => {
           className='form-control'
         ></textarea>
       </label>
-      <input type='submit' value='Create Post' className='btn' />
+      <input
+        type='submit'
+        value='Create Post'
+        disabled={!canSave}
+        className='btn'
+      />
     </form>
   );
 };
