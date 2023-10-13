@@ -14,7 +14,17 @@ const PostList = () => {
   const orderPosts = posts
     .slice()
     .sort((a, b) => a.created_at.localeCompare(b.created_at));
-  return <div></div>;
+
+  const listPosts = orderPosts.map((post) => (
+    <Post key={post?.id} post={post} />
+  ));
+  return (
+    <div>
+      {isLoading && <p>Loading...</p>}
+      {isError && <p>{error}</p>}
+      {isSuccess && <div>{listPosts}</div>}
+    </div>
+  );
 };
 
 export default PostList;
