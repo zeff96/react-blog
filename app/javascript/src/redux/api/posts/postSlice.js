@@ -22,3 +22,5 @@ const postSlice = apiSlice.injectEndpoints({
     }),
   }),
 });
+
+export const { useGetPostsQuery, useAddPostMutation } = postSlice;
