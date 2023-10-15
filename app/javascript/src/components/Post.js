@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from './Post.module.css';
 
 const Post = ({ post }) => {
   return (
-    <div>
+    <div className={styles.post}>
       <h2>{post.title}</h2>
       <p>
         {post.content.length > 100
