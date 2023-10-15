@@ -1,6 +1,7 @@
 import React from 'react';
 import { useGetPostsQuery } from '../redux/api/posts/postSlice';
 import Post from '../components/Post';
+import styles from './PostList.module.css';
 
 const PostList = () => {
   const {
@@ -19,7 +20,7 @@ const PostList = () => {
     <Post key={post?.id} post={post} />
   ));
   return (
-    <div>
+    <div className={styles['post-container']}>
       {isLoading && <p>Loading...</p>}
       {isError && <p>{error}</p>}
       {isSuccess && <div>{listPosts}</div>}
