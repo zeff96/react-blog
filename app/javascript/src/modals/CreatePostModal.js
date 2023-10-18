@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import AddPostForm from '../components/AddPostForm';
+import styles from './CreatePostModal.module.css';
 
 const CreatePostModal = () => {
   const [show, setShow] = useState(false);
   return (
     <section>
-      <button type='button' className='btn-modal' onClick={() => setShow(true)}>
+      <button
+        type='button'
+        className={styles['btn-modal']}
+        onClick={() => setShow(true)}
+      >
         Add Post
       </button>
       <div className='myModal' id='myModal'>
