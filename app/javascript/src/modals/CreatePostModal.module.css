@@ -14,8 +14,12 @@
   color: #0ec487;
 }
 
+.section {
+  padding: 1.5rem;
+}
+
 .myModal {
-  display: flex;
+  display: block;
   border: 1px solid #ccc;
   padding: 1rem 1.5rem;
   border-radius: 0.3rem;

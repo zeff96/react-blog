@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './AddPostForm.css';
+import styles from './AddPostForm.module.css';
 import { useAddPostMutation } from '../redux/api/posts/postSlice';
 
 const AddPostForm = () => {
@@ -43,8 +43,8 @@ const AddPostForm = () => {
     }
   };
   return (
-    <form className='form' onSubmit={handleSubmit}>
-      <label htmlFor='title' className='form-label'>
+    <form className={styles.form} onSubmit={handleSubmit}>
+      <label htmlFor='title' className={styles['form-label']}>
         Title
         <input
           type='text'
@@ -52,18 +52,18 @@ const AddPostForm = () => {
           id='title'
           value={formValue.title}
           placeholder='Post title'
-          className='form-control'
+          className={styles['form-control']}
           onChange={handleInputChange}
         />
       </label>
-      <label htmlFor='content' className='form-label'>
+      <label htmlFor='content' className={styles['form-label']}>
         Content
         <textarea
           name='content'
           id='content'
           value={formValue.content}
           placeholder='Post body'
-          className='form-control'
+          className={styles['form-control']}
           onChange={handleInputChange}
         ></textarea>
       </label>
@@ -71,7 +71,7 @@ const AddPostForm = () => {
         type='submit'
         value='Create Post'
         disabled={!canSave}
-        className='btn'
+        className={styles.btn}
       />
     </form>
   );
