@@ -4,5 +4,12 @@
   border-radius: 0.3rem;
   background-color: #0ec487;
   color: #fff;
+  transition: all 0.3s;
   cursor: pointer;
+}
+
+.btn-modal:hover {
+  border: 1px solid #0ec487;
+  background-color: #fff;
+  color: #0ec487;
 }
