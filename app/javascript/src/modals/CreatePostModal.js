@@ -13,7 +13,7 @@ const CreatePostModal = () => {
       >
         Add Post
       </button>
-      <div className='myModal' id='myModal'>
+      <div className={styles.myModal}>
         <div className='modal-header'>
           <h2>Add new Post</h2>
           <span onClick={() => setShow(false)}>&#10060;</span>

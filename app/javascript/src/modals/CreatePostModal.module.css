@@ -13,3 +13,11 @@
   background-color: #fff;
   color: #0ec487;
 }
+
+.myModal {
+  display: flex;
+  border: 1px solid #ccc;
+  padding: 1rem 1.5rem;
+  border-radius: 0.3rem;
+  margin: 1rem 0;
+}
