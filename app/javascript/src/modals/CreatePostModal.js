@@ -1,7 +1,7 @@
 import React from 'react';
+import AddPostForm from '../components/AddPostForm';
 
 const CreatePostModal = () => {
-  const [show, setShow] = useState(false);
   return (
     <div className='myModal' id='myModal'>
       <div className='modal-header'>
