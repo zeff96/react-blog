@@ -6,6 +6,9 @@ import PostList from './PostList';
 const Homepage = () => {
   return (
     <>
+      <button type='button' className='btn-modal' id='myBtn'>
+        Add Post
+      </button>
       <AddPostForm />
       <PostList />
     </>
