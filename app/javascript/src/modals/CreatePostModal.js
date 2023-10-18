@@ -5,13 +5,13 @@ const CreatePostModal = () => {
   const [show, setShow] = useState(false);
   return (
     <section>
-      <button type='button' className='btn-modal' id='myBtn'>
+      <button type='button' className='btn-modal' onClick={() => setShow(true)}>
         Add Post
       </button>
       <div className='myModal' id='myModal'>
         <div className='modal-header'>
           <h2>Add new Post</h2>
-          <span>&#10060;</span>
+          <span onClick={() => setShow(false)}>&#10060;</span>
         </div>
         <div className='modal-body'>
           <AddPostForm />
