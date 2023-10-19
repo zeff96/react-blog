@@ -33,3 +33,12 @@
 .show {
   display: block;
 }
+
+.modal-content {
+  background-color: #fefefe;
+  border: 1px solid #888;
+  border-radius: 0.5rem;
+  margin: 15% auto;
+  padding: 2rem;
+  width: 80%;
+}

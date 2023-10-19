@@ -21,7 +21,7 @@ const CreatePostModal = () => {
         Add Post
       </button>
       <div className={modalClasses.join('')}>
-        <div>
+        <div className={styles['modal-content']}>
           <div className='modal-header'>
             <h2>Add new Post</h2>
             <span onClick={() => setShow(false)}>&times;</span>
