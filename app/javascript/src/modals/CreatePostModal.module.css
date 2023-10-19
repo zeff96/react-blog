@@ -42,3 +42,11 @@
   padding: 2rem;
   width: 80%;
 }
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
