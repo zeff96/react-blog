@@ -50,3 +50,8 @@
   margin-bottom: 1rem;
   font-size: 2rem;
 }
+
+.btn-close {
+  font-size: 3rem;
+  cursor: pointer;
+}
