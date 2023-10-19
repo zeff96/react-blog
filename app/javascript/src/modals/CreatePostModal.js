@@ -4,6 +4,13 @@ import styles from './CreatePostModal.module.css';
 
 const CreatePostModal = () => {
   const [show, setShow] = useState(false);
+
+  const modalClasses = [styles.myModal];
+
+  if (show) {
+    modalClasses.push(styles.show);
+  }
+
   return (
     <section className={styles.section}>
       <button
