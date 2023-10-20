@@ -5,12 +5,6 @@ import styles from './CreatePostModal.module.css';
 const CreatePostModal = () => {
   const [show, setShow] = useState(false);
 
-  const modalClasses = [styles.myModal];
-
-  if (show) {
-    modalClasses.push(styles.show);
-  }
-
   return (
     <section className={styles.section}>
       <button
@@ -20,7 +14,7 @@ const CreatePostModal = () => {
       >
         Add Post
       </button>
-      <div className={modalClasses.join('')}>
+      <div className={`${styles.myModal} ${show ? styles.show : ''}`}>
         <div className={styles['modal-content']}>
           <div className={styles['modal-header']}>
             <h2>Add new Post</h2>
