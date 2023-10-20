@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Authentication.css';
+import styles from './Authentication.module.css';
 import { useLoginMutation } from '../../redux/api/user/userSlice';
 import { setCredentials } from '../../redux/features/authSlice';
 import { useAppDispatch } from '../../redux/features/hook';
@@ -34,9 +34,9 @@ const Authentication = () => {
     }
   };
   return (
-    <form className='form' onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       {error && <span className='error-state'>{error}</span>}
-      <label htmlFor='email' className='form-label'>
+      <label htmlFor='email' className={styles['form-label']}>
         Email
         <input
           type='email'
@@ -47,10 +47,10 @@ const Authentication = () => {
           autoFocus
           required
           onChange={onEmailChanged}
-          className='form-control'
+          className={styles['form-control']}
         />
       </label>
-      <label htmlFor='password' className='form-label'>
+      <label htmlFor='password' className={styles['form-label']}>
         Password
         <input
           type='password'
@@ -60,10 +60,15 @@ const Authentication = () => {
           autoFocus
           required
           onChange={onPasswordChanged}
-          className='form-control'
+          className={styles['form-control']}
         />
       </label>
-      <input type='submit' value='Log in' disabled={!canSave} className='btn' />
+      <input
+        type='submit'
+        value='Log in'
+        disabled={!canSave}
+        className={styles.btn}
+      />
     </form>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Registration.css';
+import styles from './Registration.module.css';
 import { useSignupMutation } from '../../redux/api/user/userSlice';
 
 const Regsitration = () => {
@@ -54,8 +54,8 @@ const Regsitration = () => {
   };
 
   return (
-    <form className='form' onSubmit={handleSubmit}>
-      <label htmlFor='name' className='form-label'>
+    <form className={styles.form} onSubmit={handleSubmit}>
+      <label htmlFor='name' className={styles['form-label']}>
         Name
         <input
           type='text'
@@ -66,10 +66,10 @@ const Regsitration = () => {
           autoFocus
           required
           onChange={onNameChanged}
-          className='form-control'
+          className={styles['form-control']}
         />
       </label>
-      <label htmlFor='email' className='form-label'>
+      <label htmlFor='email' className={styles['form-label']}>
         Email
         <input
           type='email'
@@ -80,11 +80,11 @@ const Regsitration = () => {
           autoFocus
           required
           onChange={onEmailChanged}
-          className='form-control'
+          className={styles['form-control']}
         />
         {error && <span className='email-error-state'>{error}</span>}
       </label>
-      <label htmlFor='password' className='form-label'>
+      <label htmlFor='password' className={styles['form-label']}>
         Password
         <input
           type='password'
@@ -94,10 +94,10 @@ const Regsitration = () => {
           autoFocus
           required
           onChange={onPasswordChanged}
-          className='form-control'
+          className={styles['form-control']}
         />
       </label>
-      <label htmlFor='password_confirmation' className='form-label'>
+      <label htmlFor='password_confirmation' className={styles['form-label']}>
         Password Confirmation
         <input
           type='password'
@@ -107,7 +107,7 @@ const Regsitration = () => {
           autoFocus
           required
           onChange={onPasswordConfirmationChanged}
-          className='form-control'
+          className={styles['form-control']}
         />
         {mismatch && <span className='mismatch-state'>{mismatch}</span>}
       </label>
@@ -115,7 +115,7 @@ const Regsitration = () => {
         type='submit'
         value='Sign up'
         disabled={!canSave}
-        className='btn'
+        className={styles.btn}
       />
     </form>
   );
