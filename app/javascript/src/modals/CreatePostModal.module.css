@@ -48,8 +48,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  padding: 1rem;
   font-size: 2rem;
+}
+
+.modal-body {
+  padding: 1rem;
 }
 
 .btn-close {

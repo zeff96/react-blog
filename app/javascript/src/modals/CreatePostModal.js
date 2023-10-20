@@ -25,7 +25,8 @@ const CreatePostModal = () => {
               &times;
             </span>
           </div>
-          <div className='modal-body'>
+          <hr />
+          <div className={styles['modal-body']}>
             <AddPostForm />
           </div>
         </div>
