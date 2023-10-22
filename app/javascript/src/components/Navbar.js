@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
+import { selectAuthToken } from '../redux/features/authSlice';
 
 const NavbarComponet = () => {
   const [isNavItemsVisible, setIsNavItemsVisible] = useState(false);
@@ -26,16 +27,24 @@ const NavbarComponet = () => {
               Home
             </NavLink>
           </li>
-          <li>
-            <NavLink to='/registration' className='nav-link'>
-              sign Up
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className='nav-link ' to={'/login'}>
-              Login
-            </NavLink>
-          </li>
+          {selectAuthToken ? (
+            <>
+              <li>
+                <NavLink to='/registration' className='nav-link'>
+                  sign Up
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className='nav-link ' to={'/login'}>
+                  Login
+                </NavLink>
+              </li>
+            </>
+          ) : (
+            <li>
+              <button type='button'>Logout</button>
+            </li>
+          )}
         </ul>
       </div>
     </nav>
