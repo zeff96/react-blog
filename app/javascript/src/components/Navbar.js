@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import { selectAuthToken } from '../redux/features/authSlice';
+import { useAppSelector } from '../redux/features/hook';
 
 const NavbarComponet = () => {
   const [isNavItemsVisible, setIsNavItemsVisible] = useState(false);
@@ -9,6 +10,8 @@ const NavbarComponet = () => {
   const toggleNavItems = () => {
     setIsNavItemsVisible(!isNavItemsVisible);
   };
+
+  const token = useAppSelector(selectAuthToken);
 
   return (
     <nav className='nav'>
@@ -27,7 +30,7 @@ const NavbarComponet = () => {
               Home
             </NavLink>
           </li>
-          {selectAuthToken ? (
+          {token ? (
             <>
               <li>
                 <NavLink to='/registration' className='nav-link'>
