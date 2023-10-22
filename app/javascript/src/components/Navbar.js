@@ -30,7 +30,7 @@ const NavbarComponet = () => {
               Home
             </NavLink>
           </li>
-          {token ? (
+          {!token ? (
             <>
               <li>
                 <NavLink to='/registration' className='nav-link'>
