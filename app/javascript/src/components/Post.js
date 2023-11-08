@@ -10,6 +10,11 @@ const Post = ({ post }) => {
           ? `${post.content.substring(0, 100)}...`
           : post.content}
       </p>
+      <div>
+        <button>
+          {post.comments_counter} comments
+        </button>
+      </div>
     </div>
   );
 };
