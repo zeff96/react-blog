@@ -12,6 +12,9 @@ const Post = ({ post }) => {
       </p>
       <div>
         <button>
+          '' {post.likes_counter}
+        </button>
+        <button>
           {post.comments_counter} comments
         </button>
       </div>
