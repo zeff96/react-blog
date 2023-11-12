@@ -1,10 +1,12 @@
-"use client"
-
 import React, {useState} from 'react';
 import styles from './Post.module.css';
 
 const Post = ({ post }) => {
   const[show, setShow] = useState(false)
+
+  const toggleShow = () => {
+    setShow(prevState => !prevState)
+  }
 
   return (
     <div className={styles.post}>
@@ -12,7 +14,7 @@ const Post = ({ post }) => {
       <p>
         {show ? post.content : `${post.content.substring(0, 100)}...`}
         {post.content.length > 100 && (
-          <button>
+          <button onClick={toggleShow}>
             {show ? 'show less' : 'show more'}
           </button>
         )}
