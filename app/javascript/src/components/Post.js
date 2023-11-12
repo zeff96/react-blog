@@ -1,14 +1,21 @@
-import React from 'react';
+"use client"
+
+import React, {useState} from 'react';
 import styles from './Post.module.css';
 
 const Post = ({ post }) => {
+  const[show, setShow] = useState(false)
+
   return (
     <div className={styles.post}>
       <h2>{post.title}</h2>
       <p>
-        {post.content.length > 100
-          ? `${post.content.substring(0, 100)}...`
-          : post.content}
+        {show ? post.content : `${post.content.substring(0, 100)}...`}
+        {post.content.length > 100 && (
+          <button>
+            {show ? 'show less' : 'show more'}
+          </button>
+        )}
       </p>
       <div>
         <button>
