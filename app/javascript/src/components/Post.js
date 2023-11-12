@@ -14,16 +14,16 @@ const Post = ({ post }) => {
       <p>
         {show ? post.content : `${post.content.substring(0, 100)}...`}
         {post.content.length > 100 && (
-          <button onClick={toggleShow}>
+          <button onClick={toggleShow} className={styles.btn}>
             {show ? 'show less' : 'show more'}
           </button>
         )}
       </p>
       <div>
-        <button>
+        <button className={styles.btn}>
           '' {post.likes_counter}
         </button>
-        <button>
+        <button className={styles.btn}>
           {post.comments_counter} comments
         </button>
       </div>

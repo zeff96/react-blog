@@ -5,3 +5,10 @@
   border-radius: 0.3rem;
   margin: 1.5rem 0;
 }
+
+.btn {
+  border: none;
+  outline: none;
+  background-color: #fff;
+  cursor: pointer;
+}
