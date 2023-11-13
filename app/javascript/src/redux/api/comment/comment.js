@@ -7,3 +7,5 @@ const commentSlice = apiSlice.injectEndpoints({
     }) 
   })
 })
+
+export const {useGetCommentsQuery} = commentSlice
