@@ -4,10 +4,13 @@ import { useGetCommentsQuery, usePostCommentMutation } from '../redux/api/commen
 const CommentModal = (postId) => {
   const[body, setBody] = useState('')
 
-  const{data, isLoading, isError, isSuccess, error} = useGetCommentsQuery(postId)
+  const{data} = useGetCommentsQuery(postId)
   const[postComment] = usePostCommentMutation(postId)
 
-  const addPost = async() => {
+  const comments = data
+
+  const addPost = async(e) => {
+    e.preventDefault()
     try {
       await postComment({body}).unwrap()
     } catch (error) {
@@ -17,11 +20,13 @@ const CommentModal = (postId) => {
 
   return (
     <div>
-      <p>{Comment.body}</p>
+      {comments.map((comment) => (
+        <p>{comment.body}</p>
+      ))}
       <hr />
-      <form action="">
+      <form onSubmit={addPost}>
         <textarea name="body" placeholder='write a comment' value={body} onChange={(e) => setBody(e.target.value)} >
-          <button type="button" onClick={addPost}>send</button>
+          <button type="submit">send</button>
         </textarea>
       </form>
     </div>
